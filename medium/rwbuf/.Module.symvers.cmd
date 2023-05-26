@@ -1,0 +1,1 @@
+cmd_/home/napleon/CodeSpace/os-djz/medium/rwbuf/Module.symvers := sed 's/\.ko$$/\.o/' /home/napleon/CodeSpace/os-djz/medium/rwbuf/modules.order | scripts/mod/modpost -m -a  -o /home/napleon/CodeSpace/os-djz/medium/rwbuf/Module.symvers -e -i Module.symvers   -T -

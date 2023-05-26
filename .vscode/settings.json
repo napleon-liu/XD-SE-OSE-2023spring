@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "fs.h": "c",
+        "ioctl.h": "c",
+        "kernel.h": "c",
+        "string.h": "c",
+        "fcntl.h": "c",
+        "slab.h": "c",
+        "uaccess.h": "c",
+        "mm.h": "c",
+        "errno.h": "c",
+        "io.h": "c",
+        "semaphore.h": "c",
+        "ipc.h": "c"
+    },
+    "cmake.configureOnOpen": false
+}
