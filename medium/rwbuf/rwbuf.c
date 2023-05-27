@@ -6,7 +6,6 @@
 #include <linux/slab.h>
 #include <asm/io.h>
 #include <linux/gfp.h>
-// #include <sys/types.h>
 // 用于 ioctl 命令
 #define RW_CLEAR 0x909090
 #define RW_RDOLD 0x909091

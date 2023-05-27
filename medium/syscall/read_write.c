@@ -32,12 +32,11 @@ int main(int argc, char* argv[])
 {
     int shmid;
     key_t key;
-
-    // char* filename = argv[1];
-    // char* mode = argv[2];
+    char* filename = argv[1];
+    char* mode = argv[2];
     // for test
-    char* filename = "myfile.txt";
-    char* mode = "1";
+    // char* filename = "myfile.txt";
+    // char* mode = "1";
 
     key = ftok("./", 2023);
     if (key == -1)
@@ -54,30 +53,18 @@ int main(int argc, char* argv[])
     // 连接共享内存
     shm_addr = shmat(shmid, NULL, 0); // 连接共享内存
     shm_addr[0] = 0;
-    // if (shm_addr[0] == 0)
-    //     printf("OK\n");
-    if(strcmp(mode, "0") == 0) {
-        if ((fd = open(filename, O_RDONLY)) == -1) {
-        // perror("fail to open %s\n", filename);
+
+    if ((fd = open(filename, O_RDONLY)) == -1) {
         fprintf(stderr, "fail to open %s\n", filename);
         exit(2);
-        }
+    }
+    if(strcmp(mode, "0") == 0) {
         char buf[MAX_SIZE];
-        // 读信息
-        // while ((read(fd, buf, MAX_SIZE - 1)) != 0) {
-        //     printf("%s\n", buf);
-        // }
         read(fd, buf, MAX_SIZE - 1);
         printf("%s", buf);
-        close(filename);
     }
     // 写信息 
     else if (strcmp(mode, "1") == 0) {
-        if ((fd = open(filename, O_WRONLY | O_APPEND)) == -1) {
-            // perror("fail to open %s\n", filename);
-            fprintf(stderr, "fail to open %s\n", filename);
-            exit(2);
-        }
         pid_t pid = fork();
         if (pid == 0) {
             print2();

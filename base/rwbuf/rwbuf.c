@@ -62,7 +62,6 @@ ssize_t rwbuf_write(struct file *file, const char *buf, size_t count, loff_t *f_
 {
     if (count > 0)
     {
-        // rwbuf_old = rwbuf_new;
         strcpy(rwbuf_old, rwbuf_new);
         old_cnt = new_cnt;
         new_cnt = count > RWBUF_MAX_SIZE ? RWBUF_MAX_SIZE : count;
@@ -89,7 +88,6 @@ ssize_t rwbuf_read(struct file *file, char *buf, size_t count, loff_t *f_pos)
     } else {
         copy_to_user(buf, rwbuf_old, count);
     }
-    // printk("[rwbuf] Read successful. After reading, new_cnt = %d\n", new_cnt);
     return count;
 }
 

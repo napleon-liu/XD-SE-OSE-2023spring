@@ -1,1 +1,0 @@
-cmd_/home/napleon/CodeSpace/os-djz/base/rwbuf/rwbuf.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/napleon/CodeSpace/os-djz/base/rwbuf/rwbuf.ko /home/napleon/CodeSpace/os-djz/base/rwbuf/rwbuf.o /home/napleon/CodeSpace/os-djz/base/rwbuf/rwbuf.mod.o;  true
