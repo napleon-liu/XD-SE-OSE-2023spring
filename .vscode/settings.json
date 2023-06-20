@@ -11,7 +11,8 @@
         "errno.h": "c",
         "io.h": "c",
         "semaphore.h": "c",
-        "ipc.h": "c"
+        "ipc.h": "c",
+        "add.h": "c"
     },
     "cmake.configureOnOpen": false
 }
