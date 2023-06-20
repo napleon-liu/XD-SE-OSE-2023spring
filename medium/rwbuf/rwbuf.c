@@ -130,7 +130,7 @@ int rwbuf_mmap(struct file *file, struct vm_area_struct *vma) {
     unsigned long pfn_start = (virt_to_phys(rwbuf_new) >> PAGE_SHIFT) + vma->vm_pgoff;
     unsigned long virt_start = (unsigned long)rwbuf_new + offset;
     unsigned long size = vma->vm_end - vma->vm_start;
-    if (remap_pfn_range(vma, vma->vm_start, pfn_start, 
+    if (remap_pfn_range(vma, vma->vm_start, pfn_start,
         size,
         vma->vm_page_prot
     ))
